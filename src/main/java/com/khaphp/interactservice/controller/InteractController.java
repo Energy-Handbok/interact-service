@@ -18,7 +18,7 @@ public class InteractController {
     private final InteractService interactService;
 
     @PostMapping
-    @Operation(description = "LIKE, VOTE, REPORT -> customerID là thàng cus đang làm vc dó             \n" +
+    @Operation(description ="LIKE, VOTE, REPORT -> customerID là thàng cus đang làm vc dó             \n" +
             "SHARE -> customerId là thằng Owner của cái cooking recipe đó, gmails là nơi chứa các email để cho thằng owner share           \n" +
             "VOTE -> cần the star để hiê số sao             \n" +
             "LIKE, REPORT (customerId, cookingRecipeId, typeInteract)           \n" +

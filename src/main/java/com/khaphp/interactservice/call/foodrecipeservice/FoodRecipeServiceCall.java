@@ -1,8 +1,6 @@
 package com.khaphp.interactservice.call.foodrecipeservice;
 
 import com.khaphp.common.entity.CookingRecipe;
-import com.khaphp.common.entity.UserSystem;
-import com.khaphp.interactservice.call.userservice.UserServiceFeignClient;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.cloud.client.circuitbreaker.CircuitBreakerFactory;
@@ -40,7 +38,7 @@ public class FoodRecipeServiceCall {
         try {
             LinkedHashMap<String, Object> data = (LinkedHashMap<String, Object>) responseEntity.getBody();
             if(data == null) return null;
-            object = CookingRecipe.mapFromLinkedHashMap((LinkedHashMap<String, Object>) data.get("data"));
+            object = CookingRecipe.getObjectFromLinkedHashMap((LinkedHashMap<String, Object>) data.get("data"));
         } catch (NullPointerException | ParseException e) {
             throw new RuntimeException(e);
         }
